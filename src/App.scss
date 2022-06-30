@@ -1,0 +1,17 @@
+main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn {
+    background: #2CA4D8;
+    color: white;
+    box-shadow: 0px 2px 20px rgba(56, 181, 235, 0.2);
+    border-radius: 10px;
+}
+
+.btn:focus {
+    box-shadow: unset;
+}

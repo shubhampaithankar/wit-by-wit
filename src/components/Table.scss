@@ -1,0 +1,77 @@
+.table-box {
+    border: 1px solid #D3D6DB;
+    border-radius: 10px;
+    overflow: auto;
+    background-color: white;
+}
+
+thead {
+    background-color: #F1F4F8;
+    height: 2rem;
+}
+
+thead tr {
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+thead tr td:first-of-type{
+    border-top-left-radius: 10px; 
+}
+
+thead tr td:last-of-type{
+    border-top-right-radius: 10px; 
+}
+
+tbody tr {
+    text-align: center;
+    border-bottom: 1px solid #F1F4F8;
+    height: 3rem;
+}
+
+tbody tr:hover, tbody tr:focus {
+    background-color: #F1F4F8;
+}
+
+.status {
+    color: white;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 16px;
+    font-size: 0.85rem;
+    width: 5rem;
+    margin-top: 15px;
+
+    font-weight: 500;
+}
+
+.passed {
+    background-color: #2CBF6E;
+}
+.failed {
+    background-color: #F24643;
+}
+
+.grade {
+    font-weight: 500;
+}
+
+.excellent {
+    color: #2CBF6E;
+}
+
+.poor {
+    color: #F24643;
+}
+
+.average {
+    color: #2CA4D8;
+}
+
+img {
+    margin: 0 0.25rem;
+}
