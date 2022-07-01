@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Table.scss'
 
+import { ModalContext } from '../App'
+
+import { UtilityService } from '../services'
+
 const Table = ({ tableData }: any) => {
+    const modalContext = useContext(ModalContext) as any
+    const { display: { setShow, setModalData }  } = modalContext
+
+    const onEditClick = () => {
+        setShow(true)
+        setModalData({
+            name: 'edit',
+            title: 'Edit Student'
+        })
+    }
+
+    const onremoveClick = () => {
+        setShow(true)
+        setModalData({
+            name: 'remove',
+            title: 'Remove Student'
+        })
+    }
+
     return (
-        <div className='table-box w-100 h-100 mb-4'>
+        <div className='table-box w-100 mb-4'>
             <table className='w-100'>
                 <thead className=''>
                     <tr className=''>
@@ -17,18 +40,28 @@ const Table = ({ tableData }: any) => {
                     </tr>
                 </thead>
                 <tbody>
-                { tableData.map((entry: any, index: number) => {
+                { tableData.map((entry: any) => {
                         return (
-                            <tr key={entry.name}>
-                                <td>{index + 1}</td>
+                            <tr key={entry.id}>
+                                <td>{entry.id}.</td>
                                 <td>{ entry.name }</td>
                                 <td>{ entry.class }</td>
-                                <td className={`${ calculateResult(entry.score).result.toLowerCase() } status`}>{ calculateResult(entry.score).result }</td>
-                                <td>{ entry.score }/100</td>
-                                <td className={`${calculateResult(entry.score).grade.toLowerCase()} grade`}>{ calculateResult(entry.score).grade }</td>
+                                <td className={`${ UtilityService.calculateResult(entry.score).result.toLowerCase() } status`}>{ UtilityService.calculateResult(entry.score).result }</td>
+                                <td>{ entry.score }/ 100</td>
+                                <td className={`${UtilityService.calculateResult(entry.score).grade.toLowerCase()} grade`}>{ UtilityService.calculateResult(entry.score).grade }</td>
                                 <td className=''>
-                                    <img role='button' src={require('../assets/edit.png')} alt="edit-btn" />
-                                    <img role='button' src={require('../assets/delete.png')} alt="delete-btn" />
+                                    <img 
+                                        role='button' 
+                                        src={require('../assets/edit.png')} 
+                                        alt="edit-btn"
+                                        onClick={() => onEditClick()}
+                                    />
+                                    <img 
+                                        role='button' 
+                                        src={require('../assets/delete.png')} 
+                                        alt="remove-btn" 
+                                        onClick={() => onremoveClick()}
+                                    />
                                 </td>
                             </tr>
                         )
@@ -40,17 +73,3 @@ const Table = ({ tableData }: any) => {
 }
 
 export default Table
-
-const calculateResult = (score: number) => {
-    score = Number(score)
-    switch (true) {
-        case score < 30:
-            return { result: 'Failed', grade: 'Poor' }
-        case score > 30 && score < 75:
-            return { result: 'Passed', grade: 'Average' }
-        case score > 75 && score < 100:
-            return { result: 'Passed', grade: 'Excellent' }
-        default:
-            return { result: '--', grade: '--' }
-    }
-}

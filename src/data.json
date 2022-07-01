@@ -1,7 +1,7 @@
 [
-    { "name": "Robert Fox", "class": "8th", "score": "78"},
-    { "name": "Ralph Edwards", "class": "7th", "score": "20"},
-    { "name": "Esther Howard", "class": "9th", "score": "60"},
-    { "name": "Arlene McCoy", "class": "7th", "score": "85"},
-    { "name": "Wade Warren", "class": "9th", "score": "25"}
+    { "id": 1, "name": "Robert Fox", "class": "8th", "score": "78" },
+    { "id": 2, "name": "Ralph Edwards", "class": "7th", "score": "20"},
+    { "id": 3, "name": "Esther Howard", "class": "9th", "score": "60"},
+    { "id": 4,"name": "Arlene McCoy", "class": "7th", "score": "85"},
+    { "id": 5, "name": "Wade Warren", "class": "9th", "score": "25"}
 ]

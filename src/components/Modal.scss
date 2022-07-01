@@ -1,0 +1,46 @@
+.modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.modal-content {
+    background: #FFFFFF;
+    border-radius: 20px;
+    width: 480px;
+}
+
+.modal-head {
+    border-bottom: 1px solid #E4E8EE;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    font-style: normal;
+}
+
+.modal-footer {
+    border-top: 1px solid #E4E8EE;
+}
+
+.cancel-btn {
+    border: 1px solid #2CA4D8;
+    border-radius: 10px;
+    color: #2CA4D8;
+}
+
+.confirm-btn {
+    color: white;
+    background: #2CA4D8;
+    box-shadow: 0px 2px 20px rgba(44, 164, 216, 0.2);
+    border-radius: 10px;
+}
+
+.remove-btn {
+    color: white;
+    background: #F24643;
+    box-shadow: 0px 2px 20px rgba(242, 70, 67, 0.05);
+    border-radius: 10px;
+}
