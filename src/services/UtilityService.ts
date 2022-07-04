@@ -2,7 +2,7 @@ export class UtilityService {
     public static calculateResult = (score: any) => {
         score = Number(score)
         switch (true) {
-            case score > 1 && score <= 30:
+            case score >= 0 && score <= 30:
                 return { result: 'Failed', grade: 'Poor' }
             case score > 30 && score <= 75:
                 return { result: 'Passed', grade: 'Average' }
