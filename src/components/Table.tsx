@@ -9,19 +9,21 @@ const Table = ({ tableData }: any) => {
     const modalContext = useContext(ModalContext) as any
     const { display: { setShow, setModalData }  } = modalContext
 
-    const onEditClick = () => {
+    const onEditClick = (entry: any) => {
         setShow(true)
         setModalData({
             name: 'edit',
-            title: 'Edit Student'
+            title: 'Edit Student',
+            entry
         })
     }
 
-    const onremoveClick = () => {
+    const onRemoveClick = (entry: any) => {
         setShow(true)
         setModalData({
             name: 'remove',
-            title: 'Remove Student'
+            title: 'Remove Student',
+            entry
         })
     }
 
@@ -40,10 +42,10 @@ const Table = ({ tableData }: any) => {
                     </tr>
                 </thead>
                 <tbody>
-                { tableData.map((entry: any) => {
+                { tableData.map((entry: any, index: number) => {
                         return (
-                            <tr key={entry.id}>
-                                <td>{entry.id}.</td>
+                            <tr key={index}>
+                                <td>{index + 1}.</td>
                                 <td>{ entry.name }</td>
                                 <td>{ entry.class }</td>
                                 <td className={`${ UtilityService.calculateResult(entry.score).result.toLowerCase() } status`}>{ UtilityService.calculateResult(entry.score).result }</td>
@@ -54,13 +56,13 @@ const Table = ({ tableData }: any) => {
                                         role='button' 
                                         src={require('../assets/edit.png')} 
                                         alt="edit-btn"
-                                        onClick={() => onEditClick()}
+                                        onClick={() => onEditClick(entry)}
                                     />
                                     <img 
                                         role='button' 
                                         src={require('../assets/delete.png')} 
                                         alt="remove-btn" 
-                                        onClick={() => onremoveClick()}
+                                        onClick={() => onRemoveClick(entry)}
                                     />
                                 </td>
                             </tr>

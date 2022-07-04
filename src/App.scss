@@ -26,3 +26,46 @@ main {
 .btn:focus {
     box-shadow: unset;
 }
+
+.status {
+    color: white;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 16px;
+    font-size: 0.85rem;
+    width: 5rem;
+    margin-top: 15px;
+
+    font-weight: 500;
+}
+
+.passed {
+    background-color: #2CBF6E;
+}
+.failed {
+    background-color: #F24643;
+}
+
+.grade {
+    font-weight: 500;
+}
+
+.excellent {
+    color: #2CBF6E;
+}
+
+.poor {
+    color: #F24643;
+}
+
+.average {
+    color: #2CA4D8;
+}
+
+.-- {
+    color: black;
+    padding-right: 65px;
+}

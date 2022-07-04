@@ -17,7 +17,7 @@ const Sidebar = () => {
                 <ul className='m-0 p-0'>
                     { data.map((entry, index) => {
                         return (
-                            <li key={index} className='' >
+                            <li role='button' key={index} className={`${entry.name  === 'Students' ? 'active' : ''} d-flex flex-row align-items-center my-3 py-2`} >
                                 <img src='' alt='' />
                                 <p className='m-0'>{entry.name}</p>
                             </li>
