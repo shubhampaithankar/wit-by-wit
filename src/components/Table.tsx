@@ -47,7 +47,7 @@ const Table = ({ tableData }: any) => {
                             <tr key={index}>
                                 <td>{index + 1}.</td>
                                 <td>{ entry.name }</td>
-                                <td>{ entry.class }</td>
+                                <td>{ UtilityService.getNumberWithOrdinal(entry.class) }</td>
                                 <td className={`${ UtilityService.calculateResult(entry.score).result.toLowerCase() } status`}>{ UtilityService.calculateResult(entry.score).result }</td>
                                 <td>{ entry.score }/ 100</td>
                                 <td className={`${UtilityService.calculateResult(entry.score).grade.toLowerCase()} grade`}>{ UtilityService.calculateResult(entry.score).grade }</td>

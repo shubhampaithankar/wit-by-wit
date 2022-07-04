@@ -10,10 +10,8 @@ const Modal = ({ setTableData }: any) => {
     const modalContext = useContext<any>(ModalContext)
     const { display: { show, onModalClose, modalData }  } = modalContext
     const modalRef = useRef<any>()
-
-    const [formData, setFormData] = useState<any>({})
-    
-    const props = { modalData, setFormData }
+   
+    const props = { modalData }
 
     const handleSubmit = (e: any) => {
       e.preventDefault()
@@ -64,7 +62,7 @@ const Modal = ({ setTableData }: any) => {
 }
 export default Modal
 
-const ModalForm = ({ modalData, setFormData }: any) => {
+const ModalForm = ({ modalData }: any) => {
     const [score, setScore] = useState('')
 
     useEffect(() => {
@@ -75,13 +73,15 @@ const ModalForm = ({ modalData, setFormData }: any) => {
       <>
         <div className="form-group mb-3">
           <label htmlFor="name" className='mb-2'>STUDENT NAME*</label>
-          <input type="text" name="name" className='form-control' defaultValue={modalData.name === 'edit' ? modalData.entry.name : ''}/>
-          {/* <p className='error-text m-0'>{errors.name && "Student name is required"}</p> */}
+          <input type="text" name="name" className='form-control' 
+            // onChange={(e) => setName(e.target.value)}
+            defaultValue={modalData.name === 'edit' ? modalData.entry.name : ''}/>
         </div>
         <div className="form-group mb-3">
           <label htmlFor="class" className='mb-2'>CLASS*</label>
-          <input type="text" name="class" className='form-control' defaultValue={modalData.name === 'edit' ? modalData.entry.class : ''}/>
-          {/* <p className='error-text m-0'>{errors.class && "Please input values between 1 & 12"}</p> */}
+          <input type="text" name="class" className='form-control'
+            // onChange={(e) => setStdClass(e.target.value)} 
+            defaultValue={modalData.name === 'edit' ? modalData.entry.class : ''}/>
         </div>
         <div className="form-group mb-3">
           <label htmlFor="score" className='mb-2'>SCORE*</label>
@@ -89,7 +89,6 @@ const ModalForm = ({ modalData, setFormData }: any) => {
             onChange={(e)=> setScore(e.target.value)} 
             defaultValue={modalData.name === 'edit' ? score : ''}
           />
-          {/* <p className='error-text m-0'>{errors.class && "Please input values between 0 & 100"}</p> */}
         </div>
         <div className="form-group mb-3 d-flex flex-column">
           <label htmlFor="result" className='mb-2'>RESULT</label>

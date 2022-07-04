@@ -13,8 +13,12 @@ export class UtilityService {
         }
     }
 
-    // public static nth(n: string){
-    //     const suffix = [,'st','nd','rd']
-    //     return !!suffix.some((e: any) => n.endsWith(e)) ? suffix[Number(n)/10%10^1&&Number(n)%10] || "th" : n
-    // }
+    public static getNumberWithOrdinal (n: any) {
+        let suffix = ["th", "st", "nd", "rd"]
+        if (suffix.some(e => n.endsWith(e))) return n
+
+        n = Number(n)
+        let v = n % 100
+        return n + (suffix[(v - 20) % 10] || suffix[v] || suffix[0]);
+    }
 }

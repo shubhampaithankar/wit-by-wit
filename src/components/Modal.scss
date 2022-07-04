@@ -54,3 +54,7 @@
     border: 1px solid #D2D8E2;
     border-radius: 10px;
 }
+
+.form-group > input.error {
+    border: 1px solid #F24643;
+}
