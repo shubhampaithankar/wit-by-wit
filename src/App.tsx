@@ -58,12 +58,13 @@ const App = () => {
               <div className="col-12 my-1 p-2">
                 <Table tableData={tableData}/>
               </div>
-              <div className="col-12 my-1 pb-3">
-                <p className="my-0">Showing { tableData.length } entries</p>
+              <div className="col-12 my-1 pb-4">
+                <p className="my-0 pb-2">Showing { tableData.length } entries</p>
               </div>
             </div>
           </section>
         </main>
+        <footer className=''>Created by Shubham Paithankar - https://github.com/shubhampaithankar</footer>
       </ModalContext.Provider>
     )
 }
